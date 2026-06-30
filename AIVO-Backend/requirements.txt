@@ -1,0 +1,51 @@
+# FastAPI 生态
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.9
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# 数据库
+sqlalchemy[asyncio]>=2.0.25
+aiomysql>=0.2.0
+motor>=3.3.2
+redis>=5.0.1
+
+# LangGraph / LangChain
+langgraph>=0.0.20
+langchain-core>=0.1.20
+langchain-openai>=0.0.5
+
+# AI 模型
+openai>=1.12.0
+httpx>=0.26.0
+
+# WebSocket
+websockets>=12.0
+
+# 安全认证
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+
+# 异步工具
+asyncio>=3.4.3
+anyio>=4.2.0
+
+# 监控
+prometheus-fastapi-instrumentator>=6.1.0
+structlog>=24.1.0
+
+# 工具库
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+
+# PDF 解析
+pymupdf>=1.23.0
+
+# 语音识别
+openai-whisper>=20231117
+
+# 音视频处理 & 仪态评估
+opencv-python>=4.9.0
+mediapipe>=0.10.9
+numpy>=1.24.0

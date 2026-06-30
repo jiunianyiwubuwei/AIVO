@@ -1,0 +1,58 @@
+# AIVO Backend 配置
+
+app:
+  name: "aivo-backend"
+  host: "0.0.0.0"
+  port: 8765
+  debug: true
+  cors_origins:
+    - "http://localhost:5174"
+    - "http://localhost:5173"
+    - "http://localhost:3000"
+
+database:
+  host: "localhost"
+  port: 3306
+  user: "root"
+  password: "${DB_PASSWORD}"
+  database: "mianshi_agent"
+  charset: "utf8mb4"
+  pool_size: 10
+  pool_recycle: 3600
+
+mongodb:
+  host: "localhost"
+  port: 27017
+  database: "xunzhi_agent"
+
+redis:
+  host: "localhost"
+  port: 6379
+  db: 0
+  password: "${REDIS_PASSWORD}"
+
+xunfei:
+  app_id: "${XUNFEI_APP_ID}"
+  api_key: "${XUNFEI_API_KEY}"
+  api_secret: "${XUNFEI_API_SECRET}"
+
+ai:
+  default_provider: "siliconflow"
+  providers:
+    siliconflow:
+      base_url: "https://api.siliconflow.cn/v1"
+      api_key: "${SILICONFLOW_API_KEY}"
+      model: "deepseek-ai/DeepSeek-V4-Pro"
+    xingchen:
+      base_url: "https://spark-api-open.xf-yun.com/v1"
+      api_key: "${XUNFEI_API_KEY}"
+      model: "4.0Ultra"
+    deepseek:
+      base_url: "https://api.deepseek.com"
+      api_key: "${DEEPSEEK_API_KEY}"
+      model: "deepseek-chat"
+
+jwt:
+  secret: "${JWT_SECRET}"
+  algorithm: "HS256"
+  access_token_expire_minutes: 60
