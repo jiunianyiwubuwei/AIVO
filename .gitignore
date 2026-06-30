@@ -1,0 +1,27 @@
+# Exclude entire backend (large models, environment configs)
+AIVO-Backend/
+
+# Frontend build artifacts
+AIVO-Frontend/node_modules/
+AIVO-Frontend/dist/
+AIVO-Frontend/.next/
+AIVO-Frontend/.turbo/
+
+# Environment files with secrets
+AIVO-Frontend/.env
+AIVO-Frontend/.env.local
+AIVO-Frontend/.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

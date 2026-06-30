@@ -1,0 +1,30 @@
+interface:
+  display_name: "寻职面试业务（Python）"
+  short_description: "处理面试生命周期、状态机、AI 契约与 LangGraph 工作流。"
+  default_prompt: |
+    使用 $xunzhi-interview-domain skill 帮我分析或修改这个仓库里的面试业务逻辑。
+
+    ## Python 版本注意事项
+
+    1. **状态枚举**: 使用 `InterviewStatus` 枚举（`app/workflow/state.py`）
+    2. **会话状态**: 字符串 `"DRAFT"`, `"ASKING"`, `"FINISHED"` 等
+    3. **AI 契约**: 在 `app/agents/ai_client.py` 中定义
+    4. **工作流**: 使用 LangGraph（`app/workflow/interview_graph.py`）
+    5. **答案管道**: `app/application/interview/answer_pipeline.py`
+    6. **存储**:
+       - 会话主记录: MySQL `interview_record` 表
+       - 运行态快照: MongoDB `interview_snapshots`
+       - 幂等缓存: Redis
+
+    ## 常见任务检查点
+
+    | 任务 | 检查文件 |
+    | --- | --- |
+    | 修改评分逻辑 | `app/agents/ai_client.py` 的 `evaluate_answer()` |
+    | 修改追问规则 | `app/application/interview/answer_pipeline.py` 的 `should_generate_follow_up()` |
+    | 修改 API 路由 | `app/api/v1/interview.py` |
+    | 修改状态定义 | `app/workflow/state.py` |
+    | 修改存储结构 | `app/application/interview/interview_service.py` |
+
+policy:
+  allow_implicit_invocation: true
