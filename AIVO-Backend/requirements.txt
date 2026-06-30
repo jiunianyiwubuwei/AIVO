@@ -49,3 +49,12 @@ openai-whisper>=20231117
 opencv-python>=4.9.0
 mediapipe>=0.10.9
 numpy>=1.24.0
+
+# ============================================================
+# 安装依赖后，请运行以下命令下载 AI 模型文件:
+#   python scripts/download_models.py
+#
+# 模型将下载到:
+#   models/whisper/base.pt          (~140 MB, Whisper 语音识别)
+#   models/mediapipe/face_landmarker.task  (~3.6 MB, 人脸检测)
+# ============================================================
